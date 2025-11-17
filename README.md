@@ -180,6 +180,7 @@ Everything worked perfectly.
 # 🙌 Author
 
 **Noor Ul Ain Amir**
+
 Built with using HTML, CSS, JavaScript and OpenWeatherMap API.
 
 ---
