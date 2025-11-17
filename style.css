@@ -1,0 +1,160 @@
+:root{
+  --bg:#0f1724;
+  --card:#0f1724;
+  --glass: rgba(255,255,255,0.04);
+  --accent: #4fb3ff;
+  --muted: #a6b0c3;
+  --glass-2: rgba(255,255,255,0.03);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body,#app{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,#071028 0%, #0f2030 100%);
+  color: #e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  padding:28px;
+}
+
+/* App container */
+.app{
+  width:100%;
+  max-width:1100px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* Topbar */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  align-items:center;
+}
+
+.brand h1{
+  margin:0;
+  font-size:22px;
+  letter-spacing:0.2px;
+}
+.brand .tag{
+  margin:0;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* Search */
+.search{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.search input{
+  padding:12px 14px;
+  min-width:220px;
+  width:320px;
+  border-radius:10px;
+  border: none;
+  outline:none;
+  background:var(--glass);
+  color:inherit;
+  font-size:14px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+}
+.search button{
+  padding:10px 14px;
+  border-radius:10px;
+  border: none;
+  background:linear-gradient(90deg,var(--accent), #7de0ff);
+  color:#022031;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow: 0 6px 18px rgba(79,179,255,0.14);
+}
+
+/* Dashboard */
+.dashboard{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+/* main card */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius:14px;
+  padding:18px;
+  display:flex;
+  gap:16px;
+  align-items:center;
+  box-shadow: 0 10px 30px rgba(2,8,20,0.45);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+.hidden{display:none}
+
+.main-card{
+  justify-content:space-between;
+  align-items:stretch;
+  overflow:hidden;
+}
+
+.card-left{flex:1;min-width:0}
+.city-row{display:flex;gap:10px;align-items:center}
+.city-row h2{margin:0;font-size:22px}
+.country{background:rgba(255,255,255,0.04);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--muted)}
+
+.temp-row{display:flex;gap:12px;align-items:center;margin-top:8px}
+.icon{width:84px;height:84px}
+.temp{font-size:36px;font-weight:700}
+.desc{font-size:14px;color:var(--muted);text-transform:capitalize}
+
+.metrics{display:flex;gap:18px;margin-top:14px}
+.metrics div{display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:13px}
+.metrics strong{font-size:16px;color:inherit}
+
+/* right panel */
+.card-right{width:280px;display:flex;flex-direction:column;justify-content:space-between}
+.extra{display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:13px}
+.extra div{background:var(--glass-2);padding:8px;border-radius:10px}
+.actions{display:flex;gap:8px;flex-direction:column}
+.actions button{padding:8px;border-radius:10px;border:none;background:rgba(255,255,255,0.04);cursor:pointer;color:inherit}
+
+/* cards grid */
+.cards-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:12px;
+}
+
+/* small card */
+.small-card{
+  padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;gap:12px;
+}
+.small-card .sc-left{flex:1}
+.small-card h3{margin:0;font-size:16px}
+.small-card .sc-temp{font-weight:700}
+.small-card .sc-meta{font-size:12px;color:var(--muted)}
+
+/* message */
+.message{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);color:var(--muted);font-size:14px}
+
+/* footer */
+.footer{text-align:center;color:var(--muted);font-size:12px;padding:8px}
+
+/* responsive */
+@media (max-width:820px){
+  .topbar{flex-direction:column;align-items:stretch}
+  .search input{width:100%}
+  .card-right{width:100%}
+  .main-card{flex-direction:column;gap:12px}
+}
+

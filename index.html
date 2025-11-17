@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/jpeg" href="NEXUS AI LOGO.jpeg">
+  <title>Professional Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <h1>Weatherly</h1>
+        <p class="tag">Realtime weather dashboard</p>
+      </div>
+
+      <form id="searchForm" class="search">
+        <input id="cityInput" type="text" placeholder="Search city (e.g. London, Karachi)" aria-label="City name" required />
+        <button type="submit" title="Search">Search</button>
+      </form>
+    </header>
+
+    <section id="dashboard" class="dashboard">
+      <div id="mainCard" class="card main-card hidden">
+        <div class="card-left">
+          <div class="city-row">
+            <h2 id="cityName">—</h2>
+            <span id="country" class="country">—</span>
+          </div>
+          <div class="temp-row">
+            <img id="weatherIcon" class="icon" src="" alt="" />
+            <div>
+              <div id="temp" class="temp">--°C</div>
+              <div id="description" class="desc">—</div>
+            </div>
+          </div>
+          <div class="metrics">
+            <div><strong id="humidity">--</strong><span>Humidity</span></div>
+            <div><strong id="wind">--</strong><span>Wind</span></div>
+            <div><strong id="feels">--</strong><span>Feels like</span></div>
+          </div>
+        </div>
+        <div class="card-right">
+          <div class="extra">
+            <div><small>Sunrise</small><br/><span id="sunrise">--:--</span></div>
+            <div><small>Sunset</small><br/><span id="sunset">--:--</span></div>
+            <div><small>Coords</small><br/><span id="coords">--</span></div>
+          </div>
+          <div class="actions">
+            <button id="saveBtn">Save to Dashboard</button>
+            <button id="clearSaved">Clear Saved</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="cardsGrid" class="cards-grid">
+        <!-- Saved city cards will be injected here -->
+      </div>
+
+      <div id="message" class="message"></div>
+    </section>
+
+    <footer class="footer">
+      <small>Built with OpenWeatherMap • Enter a city and press Search</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
